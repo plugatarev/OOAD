@@ -3,11 +3,11 @@ package com.plugatarev.planninganddoing.models;
 import javax.validation.constraints.NotEmpty;
 import java.util.Date;
 
-public class DoneMarkDTO extends MarkDTO {
-    Date dataExecution;
+public class DoneNoteDTO extends NoteDTO {
+    Date deadline;
 
-    public DoneMarkDTO(@NotEmpty String name, @NotEmpty String anons, @NotEmpty String fullText, Date dataExecution) {
+    public DoneNoteDTO(@NotEmpty String name, @NotEmpty String anons, @NotEmpty String fullText, Date deadline) {
         super(name, anons, fullText);
-        this.dataExecution = dataExecution;
+        this.deadline = deadline;
     }
 }

@@ -7,7 +7,7 @@ import javax.validation.constraints.NotEmpty;
 
 @AllArgsConstructor
 @Getter
-public abstract class MarkDTO {
+public abstract class NoteDTO {
 
     @NotEmpty
     private String name;
