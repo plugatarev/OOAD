@@ -1,6 +1,27 @@
 package com.plugatarev.planninganddoing.services;
 
-import com.plugatarev.planninganddoing.models.NoteDTO;
+import com.plugatarev.planninganddoing.entity.Note;
 
-public abstract class DoneNoteService implements CrudService<NoteDTO> {
+import java.util.Optional;
+
+public abstract class NoteService<T extends Note> implements CrudService<T> {
+    @Override
+    public void add(T entity) {
+
+    }
+
+    @Override
+    public void delete(long id) {
+
+    }
+
+    @Override
+    public void update(T entity) {
+
+    }
+
+    @Override
+    public Optional<T> getById(long id) {
+        return Optional.empty();
+    }
 }

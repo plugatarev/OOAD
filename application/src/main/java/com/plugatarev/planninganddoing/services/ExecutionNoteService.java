@@ -1,2 +1,6 @@
-package com.plugatarev.planninganddoing.services;public class ExecutionNoteService {
+package com.plugatarev.planninganddoing.services;
+
+import com.plugatarev.planninganddoing.entity.ExecutionNote;
+
+public class ExecutionNoteService extends NoteService<ExecutionNote> {
 }
