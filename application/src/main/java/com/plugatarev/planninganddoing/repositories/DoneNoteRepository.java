@@ -1,6 +1,6 @@
 package com.plugatarev.planninganddoing.repositories;
 
-import com.plugatarev.planninganddoing.models.DoneMarkDTO;
+import com.plugatarev.planninganddoing.models.DoneNoteDTO;
 
-public interface DoneMarkRepository extends MarkRepository<DoneMarkDTO> {
+public interface DoneNoteRepository extends NoteRepository<DoneNoteDTO> {
 }

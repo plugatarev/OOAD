@@ -1,7 +1,6 @@
 package com.plugatarev.planninganddoing.repositories;
 
-import com.plugatarev.planninganddoing.models.ExecutionMarkDTO;
-import org.springframework.data.repository.CrudRepository;
+import com.plugatarev.planninganddoing.models.ExecutionNoteDTO;
 
-public interface ExecutionMarkRepository extends MarkRepository<ExecutionMarkDTO> {
+public interface ExecutionNoteRepository extends NoteRepository<ExecutionNoteDTO> {
 }

@@ -1,7 +1,6 @@
 package com.plugatarev.planninganddoing.repositories;
 
-import com.plugatarev.planninganddoing.models.TrashMarkDTO;
-import org.springframework.data.repository.CrudRepository;
+import com.plugatarev.planninganddoing.models.TrashNoteDTO;
 
-public interface TrashMarkRepository extends MarkRepository<TrashMarkDTO> {
+public interface TrashNoteRepository extends NoteRepository<TrashNoteDTO> {
 }
