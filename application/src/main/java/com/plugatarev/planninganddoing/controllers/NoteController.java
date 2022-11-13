@@ -5,12 +5,11 @@ import com.plugatarev.planninganddoing.mappers.NoteMapper;
 import com.plugatarev.planninganddoing.models.NoteDTO;
 import com.plugatarev.planninganddoing.services.CrudService;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-@RequiredArgsConstructor
+import java.util.Optional;
+
 @Getter
 public abstract class NoteController <T extends Note, D extends NoteDTO> {
     private final CrudService<T> service;
@@ -21,23 +20,40 @@ public abstract class NoteController <T extends Note, D extends NoteDTO> {
         this.abstractMapper = abstractMapper;
     }
 
-    @PostMapping()
-    public @ResponseBody
-    ResponseEntity<T> create(@RequestBody D dto) {
+    @GetMapping("/add")
+    public String addNote() {
+        return "add-note";
+    }
+
+    @PostMapping("/add")
+    public String addNote(@RequestBody D dto) {
         service.add(abstractMapper.toEntity(dto));
-        return ResponseEntity.ok().build();
+        return "redirect:/main";
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<D> get(@PathVariable("id") int id) {
-        T entity = service.getById(id).orElseThrow(() ->
-                new IllegalStateException("Note with id: {" + id + "} not found."));
-        return new ResponseEntity<>(abstractMapper.toDTO(entity), HttpStatus.OK);
+    public String getNote(Model model, @PathVariable("id") long id) {
+        Optional<T> note = service.getById(id);
+        if (note.isPresent()) {
+            D dto = abstractMapper.toDTO(note.get());
+            model.addAttribute("name", dto.getName());
+            model.addAttribute("anons", dto.getAnons());
+            model.addAttribute("name", dto.getFullText());
+            return "show-note";
+        }
+        else {
+            return "note-not-found";
+        }
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<String> delete(@PathVariable int id) {
+    @GetMapping("/{id}/edit")
+    public String editNote(Model model, @PathVariable("id") long id) {
+        return "edit-note";
+    }
+
+    @DeleteMapping("/{id}/delete")
+    public String delete(@PathVariable int id) {
         service.delete(id);
-        return new ResponseEntity<>("Note with id: {" + id + "} was deleted.", HttpStatus.OK);
+        return "redirect:/main";
     }
 }
