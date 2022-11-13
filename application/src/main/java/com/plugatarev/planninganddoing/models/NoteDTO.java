@@ -8,6 +8,7 @@ import javax.validation.constraints.NotEmpty;
 @AllArgsConstructor
 @Getter
 public abstract class NoteDTO {
+    private final Long id;
 
     @NotEmpty
     private String name;

@@ -2,7 +2,9 @@ package com.plugatarev.planninganddoing.mappers;
 
 import com.plugatarev.planninganddoing.entity.ExecutionNote;
 import com.plugatarev.planninganddoing.models.ExecutionNoteDTO;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ExecutionNoteMapper implements NoteMapper<ExecutionNote, ExecutionNoteDTO> {
     @Override
     public ExecutionNote toEntity(ExecutionNoteDTO dtoNote) {
