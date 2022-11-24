@@ -1,8 +1,8 @@
 package com.plugatarev.planninganddoing.repositories;
 
-import com.plugatarev.planninganddoing.models.ExecutionNoteDTO;
+import com.plugatarev.planninganddoing.entity.ExecutionNote;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ExecutionNoteRepository extends NoteRepository<ExecutionNoteDTO> {
+public interface ExecutionNoteRepository extends NoteRepository<ExecutionNote> {
 }

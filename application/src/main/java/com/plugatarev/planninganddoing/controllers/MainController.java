@@ -1,5 +1,8 @@
 package com.plugatarev.planninganddoing.controllers;
 
+import com.plugatarev.planninganddoing.entity.DoneNote;
+import com.plugatarev.planninganddoing.entity.ExecutionNote;
+import com.plugatarev.planninganddoing.entity.TrashNote;
 import com.plugatarev.planninganddoing.models.DoneNoteDTO;
 import com.plugatarev.planninganddoing.models.ExecutionNoteDTO;
 import com.plugatarev.planninganddoing.models.TrashNoteDTO;
@@ -28,9 +31,9 @@ public class MainController {
 
     @GetMapping("/")
     public String home(Model model) {
-        Iterable<DoneNoteDTO> doneNotes = doneRep.findAll();
-        Iterable<TrashNoteDTO> trashNotes = trashRep.findAll();
-        Iterable<ExecutionNoteDTO> executionNotes = execRep.findAll();
+        Iterable<DoneNote> doneNotes = doneRep.findAll();
+        Iterable<TrashNote> trashNotes = trashRep.findAll();
+        Iterable<ExecutionNote> executionNotes = execRep.findAll();
 
         model.addAttribute("title", APPLICATION_NAME);
         model.addAttribute("doneNotes", doneNotes);

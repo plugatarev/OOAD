@@ -16,21 +16,21 @@ public class ExecutionController extends NoteController<ExecutionNote, Execution
         super(service, abstractMapper);
     }
 
-    @GetMapping("/{id}/edit")
-    public String editTrashNote(@PathVariable("id") long id, @RequestBody TrashNoteDTO body) {
-        Optional<ExecutionNote> optionalTrashNote = getService().getById(id);
-        if (optionalTrashNote.isPresent()) {
-            ExecutionNote note = optionalTrashNote.get();
-            note.setDeadline(body.getDeadline());
-            note.setAnons(body.getAnons());
-            note.setFullText(body.getFullText());
-            note.setName(body.getName());
-            getService().update(note);
-            return "redirect:/main";
-
-        }
-        return "trash-not-found";
-    }
+//    @PostMapping("/{id}/edit")
+//    public String editTrashNote(@PathVariable("id") long id, @RequestBody TrashNoteDTO body) {
+//        Optional<ExecutionNote> optionalTrashNote = getService().getById(id);
+//        if (optionalTrashNote.isPresent()) {
+//            ExecutionNote note = optionalTrashNote.get();
+//            note.setDeadline(body.getDeadline());
+//            note.setAnons(body.getAnons());
+//            note.setFullText(body.getFullText());
+//            note.setName(body.getName());
+//            getService().update(note);
+//            return "redirect:/main";
+//
+//        }
+//        return "trash-not-found";
+//    }
 
     @PostMapping("/{id}/edit")
     public String editExecNote(@PathVariable("id") long id, @RequestBody TrashNoteDTO body) {
