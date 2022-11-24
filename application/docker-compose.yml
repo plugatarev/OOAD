@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  mysql:
+    image: 'mysql:5.7'
+    container_name: 'java-mysql'
+    environment:
+      MYSQL_DATABASE: 'oaid'
+      MYSQL_USER: 'springuser'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'Password123#'
+
+  app:
+    build: ./
+    container_name: 'planninganddoing'
+    ports:
+      - '8080:8080'
