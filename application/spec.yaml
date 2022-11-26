@@ -1,0 +1,152 @@
+openapi: 3.0.3
+info:
+  title: Planning&Doing OpenAPI спецификафия
+  version: 0.0.1
+servers:
+  - url: http://localhost:8080/
+    description: application server
+paths:
+  /:
+    get:
+      summary: Перейти на главную страницу приложения со всеми таблицами
+      tags:
+        - main-controller
+  /about:
+    get:
+      summary: Информация о приложении
+      tags:
+        - main-controller
+
+  
+  /login:
+    get:
+      summary: Страница авторизации пользователя
+      tags:
+        - login-controller
+    post:
+      summary: Зайти в свой профиль
+      tags:
+        - login-controller
+
+
+  /register:
+    get:
+      summary: Страница регистрации
+      tags:
+        - login-controller
+    post:
+      summary: Зарегистрироваться в приложении
+      tags:
+        - login-controller
+
+  /trash:
+    get:
+      summary: Получить все записи из таблицы TRASH
+      tags:
+        - trash-controller
+  /trash/add:
+    get:
+      summary: Получить все записи в таблице Trash
+      tags:
+        - trash-controller
+    post:
+      summary: Добавить новую запись в таблицу TRASH
+      tags:
+        - trash-controller
+  /trash/{id}:
+    get:
+      summary: Получить {id}-ую запись в таблице TRASH
+      tags:
+        - trash-controller
+  
+  /trash/{id}/edit:
+    get:
+      summary: Страница редактирования {id}-ой записи из таблицы TRASH
+      tags:
+        - trash-controller
+    post:
+      summary: Обновить данные для {id}-ой записи из таблицы TRASH
+      tags:
+        - trash-controller
+
+  /trash/{id}/delete:
+    delete:
+      summary: Удалить {id}-ую запись из таблице TRASH
+      tags:
+        - trash-controller
+
+  /execution:
+    get:
+      summary: Получить все записи из таблицы EXCT
+      tags:
+        - execution-controller
+  /execution/add:
+    get:
+      summary: Получить все записи из таблицы EXCT
+      tags:
+        - execution-controller
+    post:
+      summary: Добавить новую запись в таблицу EXCT
+      tags:
+        - execution-controller
+  /execution/{id}:
+    get:
+      summary: Получить {id}-ую запись из таблицы EXCT
+      tags:
+        - execution-controller
+  
+  /execution/{id}/edit:
+    get:
+      summary: Страница редактирования {id}-ой записи из таблицы EXCT
+      tags:
+        - execution-controller
+    post:
+      summary: Обновить данные для {id}-ой записи из таблицы EXCT
+      tags:
+        - execution-controller
+
+  /execution/{id}/delete:
+    delete:
+      summary: Удалить {id}-ую запись из таблицы EXCT
+      tags:
+        - execution-controller
+
+  
+  /done:
+    get:
+      summary: Получить все записи из таблицы DONE
+      tags:
+        - done-controller
+  /done/add:
+    get:
+      summary: Получить все записи из таблицы DONE
+      tags:
+        - done-controller
+    post:
+      summary: Добавить новую запись в таблицу DONE
+      tags:
+        - done-controller
+  /done/{id}:
+    get:
+      summary: Получить {id}-ую запись из таблицы DONE
+      tags:
+        - done-controller
+  
+  /done/{id}/edit:
+    get:
+      summary: Страница редактирования {id}-ой записи из таблицы DONE
+      tags:
+        - done-controller
+    post:
+      summary: Обновить данные для {id}-ой записи из таблицы DONE
+      tags:
+        - done-controller
+
+  /done/{id}/delete:
+    delete:
+      summary: Удалить {id}-ую запись из таблицы DONE
+      tags:
+        - done-controller
+    
+
+  
