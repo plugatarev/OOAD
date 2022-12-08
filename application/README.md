@@ -16,3 +16,9 @@ docker-compose up --build
 ```
 ## API backend приложения 
 ![laptopController](editor.swagger.io.png)
+
+## Архитектура приложения
+### Дизайн модель
+![DesignModel](../architecture/DesignModel.png)
+### Аналитическая модель
+![AnalyticModel](../architecture/AnalyticModel.png)
