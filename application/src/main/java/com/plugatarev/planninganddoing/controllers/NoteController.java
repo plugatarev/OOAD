@@ -20,11 +20,6 @@ public abstract class NoteController <T extends Note, D extends NoteDTO> {
         this.abstractMapper = abstractMapper;
     }
 
-    @GetMapping("/add")
-    public String addNote() {
-        return "add-note";
-    }
-
     @PostMapping("/add")
     public String addNote(@RequestBody D dto) {
         service.add(abstractMapper.toEntity(dto));
@@ -47,7 +42,7 @@ public abstract class NoteController <T extends Note, D extends NoteDTO> {
     }
 
     @GetMapping("/{id}/edit")
-    public String editNote(Model model, @PathVariable("id") long id) {
+    public String editNote(@PathVariable("id") long id) {
         return "edit-note";
     }
 

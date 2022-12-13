@@ -4,6 +4,7 @@ import com.plugatarev.planninganddoing.entity.TrashNote;
 import com.plugatarev.planninganddoing.mappers.NoteMapper;
 import com.plugatarev.planninganddoing.models.TrashNoteDTO;
 import com.plugatarev.planninganddoing.services.CrudService;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -13,6 +14,12 @@ import java.util.Optional;
 public class TrashController extends NoteController<TrashNote, TrashNoteDTO> {
     public TrashController(CrudService<TrashNote> service, NoteMapper<TrashNote, TrashNoteDTO> abstractMapper) {
         super(service, abstractMapper);
+    }
+
+    @GetMapping("/add")
+    public String addNote(Model model) {
+        model.addAttribute("trash");
+        return "add-note";
     }
 
     @PostMapping("/{id}/edit")
