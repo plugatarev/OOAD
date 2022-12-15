@@ -20,6 +20,12 @@ public abstract class Note {
     private String anons;
     private String fullText;
 
+    public Note(String name, String anons, String fullText) {
+        this.name = name;
+        this.anons = anons;
+        this.fullText = fullText;
+    }
+
     public Note() {
 
     }

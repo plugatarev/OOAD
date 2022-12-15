@@ -21,4 +21,9 @@ public class DoneNote extends Note {
     public DoneNote() {
 
     }
+
+    public DoneNote(String name, String anons, String fullText, Date deadline) {
+        super(name, anons, fullText);
+        this.deadline = deadline;
+    }
 }

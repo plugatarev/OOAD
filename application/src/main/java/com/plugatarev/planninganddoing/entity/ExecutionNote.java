@@ -18,6 +18,11 @@ public class ExecutionNote extends Note {
         this.deadline = deadline;
     }
 
+    public ExecutionNote(@NotEmpty String name, @NotEmpty String anons, @NotEmpty String fullText, @NotEmpty Date deadline) {
+        super(name, anons, fullText);
+        this.deadline = deadline;
+    }
+
     public ExecutionNote() {
 
     }

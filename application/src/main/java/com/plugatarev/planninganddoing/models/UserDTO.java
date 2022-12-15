@@ -19,9 +19,6 @@ public class UserDTO {
     @NotEmpty
     private String matchingPassword;
 
-    public UserDTO() {
-    }
-
     public UserDTO(@NotEmpty Long id, @NotEmpty String username, @NotEmpty String password, @NotEmpty String matchingPassword) {
         this.id = id;
         this.password = password;
