@@ -46,9 +46,7 @@ public class TrashController extends NoteController<TrashNote, TrashNoteDTO> {
             model.addAttribute("deadline", dto.getDeadline());
             return "show-note";
         }
-        else {
-            return "note-not-found";
-        }
+        return "note-not-found";
     }
 
     @GetMapping("/edit/{id}")
